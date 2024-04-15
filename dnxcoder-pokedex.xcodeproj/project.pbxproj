@@ -24,6 +24,8 @@
 		2B2E3E792B9D03FB00D59BDC /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E3E782B9D03FB00D59BDC /* PokemonCard.swift */; };
 		2B2E3E7D2B9D0FF400D59BDC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E3E7C2B9D0FF400D59BDC /* NetworkManager.swift */; };
 		2B2E3E822B9D17D100D59BDC /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2E3E812B9D17D100D59BDC /* Pokemon.swift */; };
+		2B89AC8E2BCC5DEF003B24FD /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89AC8D2BCC5DEF003B24FD /* PokemonDetailView.swift */; };
+		2B89AC902BCC5FFC003B24FD /* getPokemonImageLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89AC8F2BCC5FFC003B24FD /* getPokemonImageLink.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		2B2E3E782B9D03FB00D59BDC /* PokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCard.swift; sourceTree = "<group>"; };
 		2B2E3E7C2B9D0FF400D59BDC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2B2E3E812B9D17D100D59BDC /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		2B89AC8D2BCC5DEF003B24FD /* PokemonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
+		2B89AC8F2BCC5FFC003B24FD /* getPokemonImageLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getPokemonImageLink.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				2B1CC49F2BA29A3A00D6B889 /* getPokemonTypeBackgroundColor.swift */,
 				2B1CC4A52BA2A7AB00D6B889 /* getPokemonCardBackgroundColor.swift */,
 				2B1CC4A72BA2A90800D6B889 /* formatPokemonCode.swift */,
+				2B89AC8F2BCC5FFC003B24FD /* getPokemonImageLink.swift */,
 			);
 			path = Funcs;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			children = (
 				2B2E3E6A2B9CFBB000D59BDC /* MainView.swift */,
 				2B2352C62B9E7D5F0025636F /* MainViewModel.swift */,
+				2B89AC8D2BCC5DEF003B24FD /* PokemonDetailView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 				2B1CC4A42BA29B0600D6B889 /* pokemonType.swift in Sources */,
 				2B2E3E6B2B9CFBB000D59BDC /* MainView.swift in Sources */,
 				2B1CC49B2BA2792900D6B889 /* JsonDataManager.swift in Sources */,
+				2B89AC8E2BCC5DEF003B24FD /* PokemonDetailView.swift in Sources */,
 				2B1CC4A82BA2A90800D6B889 /* formatPokemonCode.swift in Sources */,
 				2B2E3E792B9D03FB00D59BDC /* PokemonCard.swift in Sources */,
+				2B89AC902BCC5FFC003B24FD /* getPokemonImageLink.swift in Sources */,
 				2B2E3E692B9CFBB000D59BDC /* dnxcoder_pokedexApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

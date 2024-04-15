@@ -9,28 +9,26 @@ import SwiftUI
 
 struct PokemonCard: View {
     
-    @State public var pokemon: Pokemon2
+    public var pokemon: Pokemon2
+    @Binding public var selectedPokemon: Pokemon2?
+    let namespace: Namespace.ID
+  
+   
     
-    func getPokemonImageLink(pokemonId:Int)->String {
-        
-        if (pokemonId < 10){
-            return "https://assets.pokemon.com/assets/cms2/img/pokedex/full/00\(pokemonId).png"
-        }else if (pokemonId < 100){
-            return "https://assets.pokemon.com/assets/cms2/img/pokedex/full/0\(pokemonId).png"
-        } else if(pokemonId < 1000){
-            return "https://assets.pokemon.com/assets/cms2/img/pokedex/full/\(pokemonId).png"
-        }
-        
-        return "https://assets.pokemon.com/assets/cms2/img/pokedex/full/\(pokemonId).png"
+    init(pokemon: Pokemon2, selectedPokemon: Binding<Pokemon2?>, namespace: Namespace.ID){
+        self.pokemon = pokemon
+        self._selectedPokemon = selectedPokemon
+        self.namespace = namespace
     }
     
     
     var body: some View {
+        
         ZStack{
             HStack{
                 VStack(alignment:.leading){
-                    Text(pokemon.name)
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    Text(pokemon.name.prefix(1).capitalized + pokemon.name.dropFirst())
+                        .font(.title2)
                         .bold()
                         .foregroundColor(.white)
                     
@@ -56,6 +54,8 @@ struct PokemonCard: View {
                         PokemonRemoteImage(urlString: getPokemonImageLink(pokemonId: pokemon.id))
                             .aspectRatio(contentMode: .fill)
                             .offset(y:10)
+                            .matchedGeometryEffect(id: self.pokemon.name, in: namespace, isSource: self.pokemon.name != self.selectedPokemon?.name)
+                        
                         Text("\(formatPokemonCode(pokemonCode:pokemon.id))")
                             .font(.title3)
                             .foregroundStyle(.white)
@@ -75,8 +75,28 @@ struct PokemonCard: View {
         .background(getPokemonCardBackgroundColor(pokemonType: pokemon.type[0].type.name))
         .cornerRadius(10)
         .padding()
+        .onTapGesture {
+            withAnimation{
+                self.selectedPokemon = pokemon
+            }
+        }
     }
 }
+
+struct ItemDetailView: View{
+    
+    var body: some View {
+        VStack {
+            Text("REVOADA")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.white)
+        .edgesIgnoringSafeArea(.all)
+        .background(Color.black)
+        
+    }
+}
+
 
 //#Preview {
 //    PokemonCard(pokemon: Pokemon(name: "bulbasaur", weight: 89, types: ))
